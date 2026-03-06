@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects | Hee So Kim</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css'>
+
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.7;
+      background: #fff;
+    }
+
+    .project-container,
+    .project-container * {
+      box-sizing: border-box;
+    }
+
+    .project-container {
+      padding: 20px 14px 50px;
+      max-width: 95vw;
+      margin: 0 auto;
+    }
+
+    .project-title {
+      font-size: 32px;
+      margin: 22px 0 8px;
+      text-align: center;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .project-links {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-description {
+      max-width: 950px;
+      margin: 0 auto 28px;
+      text-align: left;
+    }
+
+    .poster-embed {
+      width: 100%;
+      margin: 20px auto 36px;
+    }
+
+    .poster-embed embed {
+      width: 100%;
+      height: 900px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .block {
+      margin: 26px 0 44px;
+      text-align: left;
+    }
+
+    .block h2 {
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    .grid-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+    }
+
+    .grid {
+      --label-col: 110px;
+      --media: 95px;
+
+      display: grid;
+      grid-template-columns: var(--label-col) repeat(var(--ncols), var(--media));
+      gap: 10px 12px;
+      align-items: start;
+      justify-content: center;
+      justify-items: center;
+      width: max-content;
+      margin: 0 auto;
+      padding: 6px 0 10px;
+    }
+
+    .col-label {
+      font-weight: 800;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.15;
+      min-height: 32px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .row-label {
+      font-weight: 800;
+      font-size: 12px;
+      text-align: right;
+      justify-self: end;
+      align-self: center;
+      padding-right: 6px;
+      white-space: nowrap;
+    }
+
+    .cell {
+      width: var(--media);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cell img {
+      width: var(--media) !important;
+      max-width: var(--media) !important;
+      height: auto !important;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    audio {
+      width: var(--media);
+      max-width: var(--media);
+      margin-top: 6px;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .project-title {
+        font-size: 24px;
+      }
+
+      .block h2 {
+        font-size: 18px;
+      }
+
+      .poster-embed embed {
+        height: 500px;
+      }
+
+      .grid {
+        --label-col: 90px;
+        --media: 86px;
+        gap: 8px 10px;
+      }
+
+      .col-label,
+      .row-label {
+        font-size: 10px;
+      }
+
+      .col-label {
+        min-height: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="heesokim_CV_2026.pdf" target="_blank">CV</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="project-container">
+    <h1 class="project-title">Model Metamers for Auditory Event Recognition</h1>
+
+    <div class="project-links">
+      <a href="36x60_horizontal_ARO_FINAL.pdf" target="_blank">Open poster as PDF</a>
+    </div>
+
+    <div class="project-description">
+      <p>
+        This project investigates invariances in auditory event categorization using model metamers. 
+        Below is my poster, followed by interactive examples of original sounds and model metamers generated under different training regimes, model classes, and generation stages.
+      </p>
+    </div>
+
+    <div class="poster-embed">
+      <embed src="36x60_horizontal_ARO_FINAL.pdf" type="application/pdf">
+    </div>
+
+    <!-- 1) Effect of Adversarial Training -->
+    <section class="block">
+      <h2>Effect of Adversarial Training</h2>
+      <div class="grid-wrap">
+        <div class="grid" style="--ncols: 4;">
+          <div class="col-label"></div>
+          <div class="col-label">Original</div>
+          <div class="col-label">CochEvent-R</div>
+          <div class="col-label">CochEvent-S</div>
+          <div class="col-label">CochWord-R</div>
+
+          <div class="row-label">Brass</div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_orig.png" alt="Brass Original">
+            <audio controls src="assets/audio/87_Brass_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_audadv_avgpool.png" alt="Brass CochEvent-R avgpool">
+            <audio controls src="assets/audio/87_Brass_audadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_audnonadv_avgpool.png" alt="Brass CochEvent-S avgpool">
+            <audio controls src="assets/audio/87_Brass_audnonadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_wordadv_avgpool.png" alt="Brass CochWord-R avgpool">
+            <audio controls src="assets/audio/87_Brass_wordadv_avgpool.wav"></audio>
+          </div>
+
+          <div class="row-label">Speech</div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_orig.png" alt="Speech Original">
+            <audio controls src="assets/audio/135_Speech_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_audadv_avgpool.png" alt="Speech CochEvent-R avgpool">
+            <audio controls src="assets/audio/135_Speech_audadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_audnonadv_avgpool.png" alt="Speech CochEvent-S avgpool">
+            <audio controls src="assets/audio/135_Speech_audnonadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_wordadv_avgpool.png" alt="Speech CochWord-R avgpool">
+            <audio controls src="assets/audio/135_Speech_wordadv_avgpool.wav"></audio>
+          </div>
+
+          <div class="row-label">Dog</div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_orig.png" alt="Dog Original">
+            <audio controls src="assets/audio/33_Dog_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_audadv_avgpool.png" alt="Dog CochEvent-R avgpool">
+            <audio controls src="assets/audio/33_Dog_audadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_audnonadv_avgpool.png" alt="Dog CochEvent-S avgpool">
+            <audio controls src="assets/audio/33_Dog_audnonadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_wordadv_avgpool.png" alt="Dog CochWord-R avgpool">
+            <audio controls src="assets/audio/33_Dog_wordadv_avgpool.wav"></audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) Effect of Task Specificity -->
+    <section class="block">
+      <h2>Effect of Task Specificity</h2>
+      <div class="grid-wrap">
+        <div class="grid" style="--ncols: 7;">
+          <div class="col-label"></div>
+          <div class="col-label">Original</div>
+          <div class="col-label">AST</div>
+          <div class="col-label">Whisper</div>
+          <div class="col-label">Whisper-AT</div>
+          <div class="col-label">BEATs</div>
+          <div class="col-label">HuBERT</div>
+          <div class="col-label">Wav2Vec2</div>
+
+          <div class="row-label">Brass</div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_orig.png" alt="Brass Original">
+            <audio controls src="assets/audio/87_Brass_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_78823_2sec.wav_ast_hidden_12.png" alt="Brass AST hidden 12">
+            <audio controls src="assets/audio/87_Brass_ast_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_whisper_encoder.ln_post.png" alt="Brass Whisper ln_post">
+            <audio controls src="assets/audio/87_Brass_whisper_encoder.ln_post.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_whisperAT_at_model.layer_tr_idx0.png" alt="Brass Whisper-AT layer_tr_idx0">
+            <audio controls src="assets/audio/87_Brass_whisperAT_at_model.layer_tr_idx0.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_beats_hidden_12.png" alt="Brass BEATs hidden 12">
+            <audio controls src="assets/audio/87_Brass_beats_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_hubert_hidden_24.png" alt="Brass HuBERT hidden 24">
+            <audio controls src="assets/audio/87_Brass_hubert_hidden_24.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_wav2vec2_hidden_24.png" alt="Brass Wav2Vec2 hidden 24">
+            <audio controls src="assets/audio/87_Brass_wav2vec2_hidden_24.wav"></audio>
+          </div>
+
+          <div class="row-label">Speech</div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_orig.png" alt="Speech Original">
+            <audio controls src="assets/audio/135_Speech_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_382758_2sec.wav_ast_hidden_12.png" alt="Speech AST hidden 12">
+            <audio controls src="assets/audio/135_Speech_ast_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_whisper_encoder.ln_post.png" alt="Speech Whisper ln_post">
+            <audio controls src="assets/audio/135_Speech_whisper_encoder.ln_post.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_whisperAT_at_model.layer_tr_idx0.png" alt="Speech Whisper-AT layer_tr_idx0">
+            <audio controls src="assets/audio/135_Speech_whisperAT_at_model.layer_tr_idx0.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_beats_hidden_12.png" alt="Speech BEATs hidden 12">
+            <audio controls src="assets/audio/135_Speech_beats_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_hubert_hidden_24.png" alt="Speech HuBERT hidden 24">
+            <audio controls src="assets/audio/135_Speech_hubert_hidden_24.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_wav2vec2_hidden_24.png" alt="Speech Wav2Vec2 hidden 24">
+            <audio controls src="assets/audio/135_Speech_wav2vec2_hidden_24.wav"></audio>
+          </div>
+
+          <div class="row-label">Dog</div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_orig.png" alt="Dog Original">
+            <audio controls src="assets/audio/33_Dog_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_428860_2sec.wav_ast_hidden_12.png" alt="Dog AST hidden 12">
+            <audio controls src="assets/audio/33_Dog_ast_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_whisper_encoder.ln_post.png" alt="Dog Whisper ln_post">
+            <audio controls src="assets/audio/33_Dog_whisper_encoder.ln_post.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_whisperAT_at_model.layer_tr_idx0.png" alt="Dog Whisper-AT layer_tr_idx0">
+            <audio controls src="assets/audio/33_Dog_whisperAT_at_model.layer_tr_idx0.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_beats_hidden_12.png" alt="Dog BEATs hidden 12">
+            <audio controls src="assets/audio/33_Dog_beats_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_hubert_hidden_24.png" alt="Dog HuBERT hidden 24">
+            <audio controls src="assets/audio/33_Dog_hubert_hidden_24.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_wav2vec2_hidden_24.png" alt="Dog Wav2Vec2 hidden 24">
+            <audio controls src="assets/audio/33_Dog_wav2vec2_hidden_24.wav"></audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Effect of Metamer Generation Stage -->
+    <section class="block">
+      <h2>Effect of Metamer Generation Stage</h2>
+      <div class="grid-wrap">
+        <div class="grid" style="--ncols: 5;">
+          <div class="col-label"></div>
+          <div class="col-label">Original</div>
+          <div class="col-label">AST</div>
+          <div class="col-label">AST (classification layer)</div>
+          <div class="col-label">CochEvent-R</div>
+          <div class="col-label">CochEvent-R (classification layer)</div>
+
+          <div class="row-label">Brass</div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_orig.png" alt="Brass Original">
+            <audio controls src="assets/audio/87_Brass_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_78823_2sec.wav_ast_hidden_12.png" alt="Brass AST hidden 12">
+            <audio controls src="assets/audio/87_Brass_ast_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_78823_2sec.wav_ast_final.png" alt="Brass AST final">
+            <audio controls src="assets/audio/87_Brass_ast_final.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_audadv_avgpool.png" alt="Brass CochEvent-R avgpool">
+            <audio controls src="assets/audio/87_Brass_audadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/87_SOUND_Brass_audadv_final.png" alt="Brass CochEvent-R final">
+            <audio controls src="assets/audio/87_Brass_audadv_final.wav"></audio>
+          </div>
+
+          <div class="row-label">Speech</div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_orig.png" alt="Speech Original">
+            <audio controls src="assets/audio/135_Speech_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_382758_2sec.wav_ast_hidden_12.png" alt="Speech AST hidden 12">
+            <audio controls src="assets/audio/135_Speech_ast_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_382758_2sec.wav_ast_final.png" alt="Speech AST final">
+            <audio controls src="assets/audio/135_Speech_ast_final.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_audadv_avgpool.png" alt="Speech CochEvent-R avgpool">
+            <audio controls src="assets/audio/135_Speech_audadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/135_SOUND_Speech_audadv_final.png" alt="Speech CochEvent-R final">
+            <audio controls src="assets/audio/135_Speech_audadv_final.wav"></audio>
+          </div>
+
+          <div class="row-label">Dog</div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_orig.png" alt="Dog Original">
+            <audio controls src="assets/audio/33_Dog_orig.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_428860_2sec.wav_ast_hidden_12.png" alt="Dog AST hidden 12">
+            <audio controls src="assets/audio/33_Dog_ast_hidden_12.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_428860_2sec.wav_ast_final.png" alt="Dog AST final">
+            <audio controls src="assets/audio/33_Dog_ast_final.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_audadv_avgpool.png" alt="Dog CochEvent-R avgpool">
+            <audio controls src="assets/audio/33_Dog_audadv_avgpool.wav"></audio>
+          </div>
+          <div class="cell">
+            <img src="assets/images/33_SOUND_Dog_audadv_final.png" alt="Dog CochEvent-R final">
+            <audio controls src="assets/audio/33_Dog_audadv_final.wav"></audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
