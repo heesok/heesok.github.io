@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
 
   <style>
     body {
@@ -15,181 +15,167 @@
       line-height: 1.7;
       background: #fff;
     }
-
-    .project-container,
-    .project-container * {
-      box-sizing: border-box;
-    }
-
+  
     .project-container {
       padding: 20px 14px 50px;
-      max-width: 95vw;
+      max-width: 1200px;
       margin: 0 auto;
     }
-
+  
     .project-title {
       font-size: 32px;
       margin: 22px 0 8px;
       text-align: center;
       font-family: 'Oswald', sans-serif;
     }
-
+  
     .project-links {
       text-align: center;
       margin-bottom: 20px;
     }
-
+  
     .project-description {
-      max-width: 950px;
+      max-width: 900px;
       margin: 0 auto 28px;
       text-align: left;
     }
-
+  
     .poster-embed {
       width: 100%;
       margin: 20px auto 36px;
     }
-
+  
     .poster-embed embed {
       width: 100%;
-      height: 900px;
+      height: 850px;
       border: 1px solid #ccc;
       border-radius: 6px;
     }
-
+  
     .block {
       margin: 26px 0 44px;
       text-align: left;
     }
-
+  
     .block h2 {
       font-size: 24px;
       margin: 0 0 12px;
     }
-
+  
     .grid-wrap {
       width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 8px;
+      overflow-x: hidden;
     }
-
+  
     .grid {
-      --label-col: 110px;
-      --media: 95px;
-
+      --label-col: 95px;
+      --gap: 12px;
+      --cell: calc(
+        (100% - var(--label-col) - (var(--ncols) * var(--gap))) / var(--ncols)
+      );
+  
       display: grid;
-      grid-template-columns: var(--label-col) repeat(var(--ncols), var(--media));
-      gap: 10px 12px;
+      grid-template-columns: var(--label-col) repeat(var(--ncols), minmax(0, 1fr));
+      column-gap: var(--gap);
+      row-gap: 14px;
       align-items: start;
-      justify-content: center;
-      justify-items: center;
-      width: max-content;
-      margin: 0 auto;
-      padding: 6px 0 10px;
+      width: 100%;
     }
-
+  
     .col-label {
-      font-weight: 800;
+      font-weight: 700;
       font-size: 12px;
       text-align: center;
-      line-height: 1.15;
-      min-height: 32px;
+      line-height: 1.2;
       display: flex;
-      align-items: flex-end;
+      align-items: end;
       justify-content: center;
+      min-height: 34px;
     }
-
+  
     .row-label {
-      font-weight: 800;
+      font-weight: 700;
       font-size: 12px;
       text-align: right;
-      justify-self: end;
       align-self: center;
       padding-right: 6px;
       white-space: nowrap;
     }
-
+  
     .cell {
-      width: var(--media);
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
+  
     .cell img {
-      width: var(--media) !important;
-      max-width: var(--media) !important;
-      height: auto !important;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
       display: block;
       border: 1px solid #ccc;
       border-radius: 6px;
       object-fit: contain;
     }
-
-    audio {
-      width: var(--media);
-      max-width: var(--media);
+  
+    .cell audio {
+      width: 100%;
+      max-width: 100%;
       margin-top: 6px;
       display: block;
     }
-
+  
     @media (max-width: 900px) {
       .project-title {
         font-size: 24px;
       }
-
+  
       .block h2 {
         font-size: 18px;
       }
-
+  
       .poster-embed embed {
         height: 500px;
       }
-
+  
       .grid {
-        --label-col: 90px;
-        --media: 86px;
-        gap: 8px 10px;
+        --label-col: 72px;
+        --gap: 8px;
       }
-
+  
       .col-label,
       .row-label {
         font-size: 10px;
       }
-
-      .col-label {
-        min-height: 28px;
-      }
     }
-  </style>
+</style>
 </head>
 
 <body>
 
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="index.html#publications">Publications</a></li>
-          <li><a href="heesokim_CV_2026.pdf" target="_blank">CV</a></li>
-        </ul>
-      </div>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-  </nav>
 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="heesokim_CV_2026.pdf" target="_blank">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <div class="project-container">
     <h1 class="project-title">Model Metamers for Auditory Event Recognition</h1>
 
